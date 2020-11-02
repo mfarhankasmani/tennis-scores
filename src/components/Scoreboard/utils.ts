@@ -49,7 +49,7 @@ const calculateScore = (score: IScore, index: number) => {
   const handleWinner = () => {
     if (
       score.currentSet >= 2 &&
-      currentPlayer.setWon - otherPlayer.setWon >= 2
+      currentPlayer.setWon - otherPlayer.setWon >= 1
     ) {
       score.winner = currentPlayer.name;
       score.gameOver = true;
@@ -78,7 +78,6 @@ const calculateScore = (score: IScore, index: number) => {
   }
 
   let currentPoint: 0 | 15 | 30 | 40 = currentPlayer.point;
-
   if (currentPoint < 30) {
     currentPoint += 15;
     //@ts-ignore
@@ -105,7 +104,6 @@ const calculateScore = (score: IScore, index: number) => {
       handleSetUpdate();
     }
   }
-
   score.players[index] = currentPlayer;
   score.players[otherIndex] = otherPlayer;
   return score;
