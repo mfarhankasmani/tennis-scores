@@ -76,8 +76,6 @@ const Scoreboard: React.FunctionComponent<IScoreboard> = ({ teams }) => {
     setCount(count + 1);
   };
 
-  console.log({ score });
-
   const setsTableHeader = players[0].sets.map((set, i) => {
     return (
       <TableCell align="right" key={i}>
