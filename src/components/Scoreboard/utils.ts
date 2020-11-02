@@ -67,6 +67,7 @@ const calculateScore = (score: IScore, index: number) => {
     if (tiePoint > 7 && tiePoint - otherTiePoint >= 2) {
       currentPlayer.tiePoint = 0;
       otherPlayer.tiePoint = 0;
+      score.tieBreaker = false;
       handleSetUpdate();
     } else {
       currentPlayer.tiePoint = tiePoint;
